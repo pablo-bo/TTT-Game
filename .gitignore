@@ -7,6 +7,7 @@
 # Replit files
 replit.nix
 .replit
+.breakpoints
 
 # Package Files #
 *.jar
