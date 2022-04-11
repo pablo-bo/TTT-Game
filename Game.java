@@ -6,7 +6,6 @@ class Game {
   private ArrayList<Player> players = new ArrayList<>();
 
 public Game(){
- 
 } 
 
 public Game(Board board){

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 class Board {
   private int size = 9;
   private char[] squares = new char[size];
@@ -38,6 +39,5 @@ public void draw(){
   System.out.println(" "+squares[3]+" | "+squares[4]+" | "+squares[5]+" ");
   System.out.println("-----------");
   System.out.println(" "+squares[6]+" | "+squares[7]+" | "+squares[8]+" ");
-  
 }
 }
