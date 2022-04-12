@@ -100,6 +100,11 @@ public void run(){
       if (isWin()){
         System.out.println(p.info()+" WIN!!!");
         break;
+      }else{
+        if(!this.hasLegalMovies()){
+          System.out.println("GAME DRAW!!!");
+          break;
+        }
       }
     }
   }
