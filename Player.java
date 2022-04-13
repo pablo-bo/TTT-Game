@@ -1,4 +1,5 @@
-import java.io.IOException;
+import java.io.IOException; // for keyboard player
+import java.util.Random; // for random player
 
 class Player {
   private String name="Unknown";
@@ -31,15 +32,23 @@ public String info(){
 public int getTurn(){
   //example for keyboard player
   int inChar=0;
-  System.out.print("Enter you turn: ");
+  System.out.print(this.info()+", enter you turn: ");
   try {
         inChar = System.in.read();
         //System.out.print("You entered ");
-        System.out.println(inChar);
+        //System.out.println(inChar);
        }
        catch (IOException e){
        System.out.println("Error reading from user");
        }
   return (inChar-48);
+  }
+  
+  public int getTurnRandom(Board b){
+  //example for randon player
+    Random rand = new Random();
+    int m = b.getFreeSquares().get(rand.nextInt(b.getFreeSquares().size()));
+    
+    return m;
   }
 }

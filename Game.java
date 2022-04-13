@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Random;
 
 class Game {
   private Board board;
@@ -84,7 +83,7 @@ public void draw(){
 }
 
 public void run(){
-  Random rand = new Random();
+//  Random rand = new Random();
   //draw start info
   this.draw();
   while(this.hasLegalMovies() & !this.isWin()){
@@ -92,7 +91,7 @@ public void run(){
       //get next turn and draw
       if(this.hasLegalMovies()){
         // for example random choice from free squares
-        int m = this.getLegalMovies().get( rand.nextInt(this.getLegalMovies().size()));
+        int m = p.getTurnRandom(this.board);
         this.board.set(m, p.getSymbol());
         this.pause(500);
         this.draw();
