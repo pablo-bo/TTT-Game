@@ -91,7 +91,8 @@ public void run(){
       //get next turn and draw
       if(this.hasLegalMovies()){
         // for example random choice from free squares
-        int m = p.getTurnRandom(this.board);
+        //int m = p.getTurnRandom(this.board);
+        int m = p.getTurn(this.board);
         this.board.set(m, p.getSymbol());
         this.pause(500);
         this.draw();
