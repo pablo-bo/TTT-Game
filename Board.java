@@ -30,6 +30,16 @@ public ArrayList<Integer> getFreeSquares(){
   return free;
 }
 
+public ArrayList<Integer> getPlayerSquares(char sym){
+  ArrayList<Integer> free = new ArrayList<>();
+  for (int i=0;i<size;i++){
+    if (squares[i]==sym){
+      free.add(i);
+      }
+  }
+  return free;
+}
+  
 public boolean chekLine(int s1, int s2, int s3){
   if(squares[s1]==squares[s2] & squares[s2]==squares[s3] & squares[s3]!=' ' ){
     return true;
