@@ -20,6 +20,15 @@ public Board(){
   }
 }
 
+public Board(Board anotherBoard){
+  //Copy constructor
+  this.size    = anotherBoard.size;
+  this.squares = new char[this.size];
+  for (int i=0;i<this.size;i++){
+    this.squares[i] = anotherBoard.squares[i];
+  }
+}
+  
 public ArrayList<Integer> getFreeSquares(){
   ArrayList<Integer> free = new ArrayList<>();
   for (int i=0;i<size;i++){
@@ -45,6 +54,22 @@ public boolean chekLine(int s1, int s2, int s3){
     return true;
     }else{
     return false;
+    }
+}
+
+public boolean isSomeWin(){
+  if (this.chekLine(0,1,2) || 
+      this.chekLine(3,4,5) || 
+      this.chekLine(6,7,8) || 
+      this.chekLine(0,3,6) || 
+      this.chekLine(1,4,7) || 
+      this.chekLine(2,5,8) || 
+      this.chekLine(0,4,8) || 
+      this.chekLine(6,4,2)  
+     ){
+      return true;
+    }else{
+      return false;
     }
 }
   
