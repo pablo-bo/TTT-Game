@@ -84,6 +84,11 @@ public boolean isDrawCondition(){
 public void set(int s, char c){
   squares[s] = c;
 }
+
+public boolean isEmpty(int s){
+  return this.squares[s]==' '; 
+}
+  
   
 public void draw(){
   //System.out.print("\033[H\033[J");//clear screen
