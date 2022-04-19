@@ -1,5 +1,6 @@
 import java.util.Random; // for random player
 
+
 class PlayerBot extends Player{
 
   public PlayerBot(){
@@ -21,7 +22,7 @@ class PlayerBot extends Player{
         //System.out.println("Test sq ="+i);
         Board testBoard = new Board(b);
         testBoard.set(i, this.getSymbol());
-        if ( testBoard.isSomeWin() ){
+        if ( testBoard.isWinCondition() ){
           //good turn
           System.out.println("good sq ="+i);
           return i;
@@ -33,8 +34,8 @@ class PlayerBot extends Player{
         //System.out.println("Test sq ="+i);
         Board testBoard = new Board(b);
         testBoard.set(i, oppoSym);
-        if ( testBoard.isSomeWin() ){
-          //good turn
+        if ( testBoard.isWinCondition() ){
+          //prevent turn
           System.out.println("prevent sq ="+i);
           return i;
         }

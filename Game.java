@@ -38,21 +38,13 @@ public void pause(int ms){
 }
   
 public boolean isWin(){
-  if (this.board.chekLine(0,1,2) || 
-      this.board.chekLine(3,4,5) || 
-      this.board.chekLine(6,7,8) || 
-      this.board.chekLine(0,3,6) || 
-      this.board.chekLine(1,4,7) || 
-      this.board.chekLine(2,5,8) || 
-      this.board.chekLine(0,4,8) || 
-      this.board.chekLine(6,4,2)  
-     ){
-      return true;
-    }else{
-      return false;
-    }
+  return this.board.isWinCondition();
 }
 
+public boolean isDraw(){
+  return this.board.isDrawCondition();
+}
+  
 public boolean hasLegalMovies(){
   if (this.board.getFreeSquares().size()==0){
     return false;
@@ -101,7 +93,7 @@ public void run(){
         System.out.println(p.info()+" WIN!!!");
         break;
       }else{
-        if(!this.hasLegalMovies()){
+        if(isDraw()){
           System.out.println("GAME DRAW!!!");
           break;
         }

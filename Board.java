@@ -57,7 +57,7 @@ public boolean chekLine(int s1, int s2, int s3){
     }
 }
 
-public boolean isSomeWin(){
+public boolean isWinCondition(){
   if (this.chekLine(0,1,2) || 
       this.chekLine(3,4,5) || 
       this.chekLine(6,7,8) || 
@@ -71,6 +71,14 @@ public boolean isSomeWin(){
     }else{
       return false;
     }
+}
+
+public boolean isDrawCondition(){
+  if ( !isWinCondition() && this.getFreeSquares().size()==0){
+    return true;
+  }else{
+    return false;
+  }
 }
   
 public void set(int s, char c){
