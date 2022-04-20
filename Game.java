@@ -51,7 +51,6 @@ public boolean hasLegalMovies(){
   }else{
     return true;
   }
-  
 }
 
 public ArrayList<Integer> getLegalMovies(){
@@ -75,15 +74,12 @@ public void draw(){
 }
 
 public void run(){
-//  Random rand = new Random();
   //draw start info
   this.draw();
   while(this.hasLegalMovies() & !this.isWin()){
     for(Player p:this.players){
       //get next turn and draw
       if(this.hasLegalMovies()){
-        // for example random choice from free squares
-        //int m = p.getTurnRandom(this.board);
         int m = p.getTurn(this.board);
         this.board.set(m, p.getSymbol());
         this.pause(500);
